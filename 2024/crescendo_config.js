@@ -61,7 +61,9 @@ var config_data = `
       "clickRestriction": "one",
       "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
       "shape": "circle 5 black red true"
-    },
+    }
+  ],
+  "auton": [
     { "name": "Leave Starting Zone",
       "code": "al",
       "type": "bool"
@@ -78,7 +80,9 @@ var config_data = `
       "name": "Note Pickup",
       "code": "anp",
       "type": "counter"
-    },
+    }
+  ],
+  "teleop": [
     { "name": "Amp Scores",
       "code": "tas",
       "type": "counter"
@@ -101,7 +105,9 @@ var config_data = `
         "x": "Not Attempted"
       },
       "defaultValue": "x"
-    },
+    }
+  ],
+  "endgame": [
     { "name": "Stage Timer",
       "code": "dt",
       "type": "radio",
@@ -128,7 +134,9 @@ var config_data = `
     { "name": "Note in Trap",
       "code": "nit",
       "type": "counter"
-    },
+    }
+  ],
+  "postmatch": [
     { "name": "Driver Skill",
       "code": "ds",
       "type": "radio",
