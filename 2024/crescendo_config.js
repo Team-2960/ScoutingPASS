@@ -5,11 +5,11 @@ var config_data = `
   "page_title": "Crescendo",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Initials",
+    { "name": "Scouter Name",
       "code": "s",
       "type": "scouter",
-      "size": 5,
-      "maxSize": 5,
+      "size": 50,
+      "maxSize": 50,
       "required": "true"
     },
     { "name": "Event",
@@ -23,8 +23,7 @@ var config_data = `
       "type": "level",
       "choices": {
         "qm": "Quals<br>",
-        "sf": "Semifinals<br>",
-        "f": "Finals"
+        "": ""
       },
       "defaultValue": "qm",
       "required": "true"
@@ -76,6 +75,11 @@ var config_data = `
     { "name": "Speaker Scores",
       "code": "ass",
       "type": "counter"
+    },
+    {
+      "name": "Note Pickup",
+      "code": "anp",
+      "type": "counter"
     }
   ],
   "teleop": [
@@ -83,12 +87,12 @@ var config_data = `
       "code": "tas",
       "type": "counter"
     },
-    { "name": "Speaker Scores",
-      "code": "tss",
+    { "name": "Unamplified Score",
+      "code": "tus",
       "type": "counter"
     },
-    { "name": "Times Amplified",
-      "code": "tta",
+    { "name": "Amplified Score",
+      "code": "taps",
       "type": "counter"
     },
     { "name": "Pickup From",
@@ -106,7 +110,13 @@ var config_data = `
   "endgame": [
     { "name": "Stage Timer",
       "code": "dt",
-      "type": "timer"
+      "type": "radio",
+      "choices": {
+        "0005": "0 - 5 Sec<br>",
+        "0510": "5 - 10 Sec<br>",
+        "1020": "10 - 20 Sec<br>"
+      },
+      "defaultValue": "0005"
     },
     { "name": "Final Status",
       "code": "fs",
@@ -123,7 +133,7 @@ var config_data = `
     },
     { "name": "Note in Trap",
       "code": "nit",
-      "type": "bool"
+      "type": "counter"
     }
   ],
   "postmatch": [
@@ -131,24 +141,24 @@ var config_data = `
       "code": "ds",
       "type": "radio",
       "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
+        "1": "1 (Not Effective)<br>",
+        "2": "2 (Average)<br>",
+        "3": "3 (Very Effective)<br>",
+        "0": "0 (Not Observed)"
       },
-      "defaultValue": "x"
+      "defaultValue": "0"
     },
     { "name": "Defense Rating",
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
-        "x": "Did not play defense"
+        "1": "1 (Below Average)<br>",
+        "2": "2 (Average)<br>",
+        "3": "3 (Good)<br>",
+        "4": "4 (Excellent)<br>",
+        "0": "0 (Did not play defense)"
       },
-      "defaultValue": "x"
+      "defaultValue": "0"
     },
     { "name": "Speed Rating",
       "code": "sr",
@@ -183,7 +193,7 @@ var config_data = `
       "code": "co",
       "type": "text",
       "size": 15,
-      "maxSize": 55
+      "maxSize": 200
     }
   ]
 }`;

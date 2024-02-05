@@ -1,9 +1,9 @@
 @font-face {
-    font-family: 'Alexis';
+    font-family: "Alexis";
     font-style: normal;
     font-weight: normal;
     src: local('Alexis'), url('../fonts/alex.woff') format('woff');
-    src: url("../fonts/alexisv3.ttf") format('truetype');
+    src: url("../fonts/FiraSans-Regular.ttf") format('truetype');
 }
 
 html, body{
