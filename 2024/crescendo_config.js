@@ -95,16 +95,15 @@ var config_data = `
       "code": "taps",
       "type": "counter"
     },
-    { "name": "Pickup From",
-      "code": "tpu",
-      "type": "radio",
-      "choices": {
-        "s": "Source<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
+    {
+      "name": "Groud Pickup",
+      "code": "tgnp",
+      "type": "counter"
+    },
+    {
+      "name": "HP Pickup",
+      "code": "thpnp",
+      "type": "counter"
     }
   ],
   "endgame": [
