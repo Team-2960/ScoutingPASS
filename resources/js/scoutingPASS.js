@@ -871,6 +871,7 @@ function updateQRHeader() {
   }
 
   document.getElementById("display_qr-info").textContent = str;
+  displayData()
 }
 
 

@@ -91,7 +91,8 @@ var config_data = `
       "code": "tus",
       "type": "counter"
     },
-    { "name": "Amplified Score",
+    {
+      "name": "Amplified Score",
       "code": "taps",
       "type": "counter"
     },
