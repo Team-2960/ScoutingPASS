@@ -87,13 +87,13 @@ var config_data = `
       "code": "tas",
       "type": "counter"
     },
-    { "name": "Unamplified Score",
-      "code": "tus",
+    { "name": "Unamplified Speaker Score",
+      "code": "tuss",
       "type": "counter"
     },
     {
-      "name": "Amplified Score",
-      "code": "taps",
+      "name": "Amplified Speaker Score",
+      "code": "tass",
       "type": "counter"
     },
     {
@@ -131,8 +131,38 @@ var config_data = `
       },
       "defaultValue": "x"
     },
+    {
+      "name": "Parked",
+      "code": "fp",
+      "type": "bool",
+    },
+    {
+      "name": "Onstage",
+      "code": "fo",
+      "type": "bool",
+    },
+    {
+      "name": "Onstage (Spotlit)",
+      "code": "fos",
+      "type": "bool",
+    },
+    {
+      "name": "Harmony",
+      "code": "fh",
+      "type": "bool",
+    },
+    {
+      "name": "Attempted but failed",
+      "code": "fabf",
+      "type": "bool",
+    },
+    {
+      "name": "Not Attempted",
+      "code": "fna",
+      "type": "bool",
+    },
     { "name": "Note in Trap",
-      "code": "nit",
+      "code": "fnit",
       "type": "counter"
     }
   ],
