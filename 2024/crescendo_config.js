@@ -5,225 +5,248 @@ var config_data = `
   "page_title": "Crescendo",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Name",
-      "code": "s",
-      "type": "scouter",
-      "size": 50,
-      "maxSize": 50,
-      "required": "true"
-    },
-    { "name": "Event",
-      "code": "e",
-      "type": "event",
-      "defaultValue": "2023tnkn",
-      "required": "true"
-    },
-    { "name": "Match Level",
-      "code": "l",
-      "type": "level",
-      "choices": {
-        "qm": "Quals<br>",
-        "": ""
+      {
+          "name": "Scouter Name",
+          "code": "s",
+          "type": "scouter",
+          "size": 50,
+          "maxSize": 50,
+          "required": "true"
       },
-      "defaultValue": "qm",
-      "required": "true"
-    },
-    { "name": "Match #",
-      "code": "m",
-      "type": "match",
-      "min": 1,
-      "max": 150,
-      "required": "true"
-    },
-    { "name": "Robot",
-      "code": "r",
-      "type": "robot",
-      "choices": {
-        "r1": "Red-1",
-        "b1": "Blue-1<br>",
-        "r2": "Red-2",
-        "b2": "Blue-2<br>",
-        "r3": "Red-3",
-        "b3": "Blue-3"
+      {
+          "name": "Event",
+          "code": "e",
+          "type": "event",
+          "defaultValue": "2023tnkn",
+          "required": "true"
       },
-      "required":"true"
-    },
-    { "name": "Team #",
-      "code": "t",
-      "type": "team",
-      "min": 1,
-      "max": 99999
-    },
-    { "name": "Auto Start Position",
-      "code": "as",
-      "type": "clickable_image",
-      "filename": "2024/field_image.png",
-      "clickRestriction": "one",
-      "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
-      "shape": "circle 5 black red true"
-    }
+      {
+          "name": "Match Level",
+          "code": "l",
+          "type": "level",
+          "choices": {
+              "qm": "Quals<br>",
+              "": ""
+          },
+          "defaultValue": "qm",
+          "required": "true"
+      },
+      {
+          "name": "Match #",
+          "code": "m",
+          "type": "match",
+          "min": 1,
+          "max": 150,
+          "required": "true"
+      },
+      {
+          "name": "Robot",
+          "code": "r",
+          "type": "robot",
+          "choices": {
+              "r1": "Red-1",
+              "b1": "Blue-1<br>",
+              "r2": "Red-2",
+              "b2": "Blue-2<br>",
+              "r3": "Red-3",
+              "b3": "Blue-3"
+          },
+          "required": "true"
+      },
+      {
+          "name": "Team #",
+          "code": "t",
+          "type": "team",
+          "min": 1,
+          "max": 99999
+      },
+      {
+          "name": "Auto Start Position",
+          "code": "as",
+          "type": "clickable_image",
+          "filename": "2024/field_image.png",
+          "clickRestriction": "one",
+          "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
+          "shape": "circle 5 black red true"
+      }
   ],
   "auton": [
-    { "name": "Leave Starting Zone",
-      "code": "al",
-      "type": "bool"
-    },
-    { "name": "Amp Scores",
-      "code": "aas",
-      "type": "counter"
-    },
-    { "name": "Speaker Scores",
-      "code": "ass",
-      "type": "counter"
-    },
-    {
-      "name": "Note Pickup",
-      "code": "anp",
-      "type": "counter"
-    }
+      {
+          "name": "Leave Starting Zone",
+          "code": "al",
+          "type": "bool"
+      },
+      {
+          "name": "Amp Scores",
+          "code": "aas",
+          "type": "counter"
+      },
+      {
+          "name": "Speaker Scores",
+          "code": "ass",
+          "type": "counter"
+      },
+      {
+          "name": "Note Pickup",
+          "code": "anp",
+          "type": "counter"
+      }
   ],
   "teleop": [
-    { "name": "Amp Scores",
-      "code": "tas",
-      "type": "counter"
-    },
-    { "name": "Unamplified Speaker Score",
-      "code": "tuss",
-      "type": "counter"
-    },
-    {
-      "name": "Amplified Speaker Score",
-      "code": "tass",
-      "type": "counter"
-    },
-    {
-      "name": "Groud Pickup",
-      "code": "tgnp",
-      "type": "counter"
-    },
-    {
-      "name": "HP Pickup",
-      "code": "thpnp",
-      "type": "counter"
-    }
+      {
+          "name": "Amp Scores",
+          "code": "tas",
+          "type": "counter"
+      },
+      {
+          "name": "Unamplified Speaker Score",
+          "code": "tuss",
+          "type": "counter"
+      },
+      {
+          "name": "Amplified Speaker Score",
+          "code": "tass",
+          "type": "counter"
+      },
+      {
+          "name": "Groud Pickup",
+          "code": "tgnp",
+          "type": "counter"
+      },
+      {
+          "name": "HP Pickup",
+          "code": "thpnp",
+          "type": "counter"
+      }
   ],
   "endgame": [
-    { "name": "Stage Timer",
-      "code": "dt",
-      "type": "radio",
-      "choices": {
-        "0005": "0 - 5 Sec<br>",
-        "0510": "5 - 10 Sec<br>",
-        "1020": "10 - 20 Sec<br>"
+      {
+          "name": "Stage Timer",
+          "code": "dt",
+          "type": "radio",
+          "choices": {
+              "1020": "10 - 20 Sec<br>",
+              "0005": "0 - 5 Sec<br>",
+              "0510": "5 - 10 Sec<br>"
+          },
+          "defaultValue": "0005"
       },
-      "defaultValue": "0005"
-    },
-    { "name": "Final Status",
-      "code": "fs",
-      "type":"radio",
-      "choices": {
-        "p": "Parked<br>",
-        "o": "Onstage<br>",
-        "s": "Onstage (Spotlit)<br>",
-        "h": "Harmony<br>",
-        "a": "Attempted but failed<br>",
-        "x": "Not attempted"
+      {
+          "name": "Final Status",
+          "code": "fs",
+          "type": "radio",
+          "choices": {
+              "p": "Parked<br>",
+              "o": "Onstage<br>",
+              "s": "Onstage (Spotlit)<br>",
+              "h": "Harmony<br>",
+              "a": "Attempted but failed<br>",
+              "x": "Not attempted"
+          },
+          "defaultValue": "x"
       },
-      "defaultValue": "x"
-    },
-    {
-      "name": "Parked",
-      "code": "fp",
-      "type": "bool",
-    },
-    {
-      "name": "Onstage",
-      "code": "fo",
-      "type": "bool",
-    },
-    {
-      "name": "Onstage (Spotlit)",
-      "code": "fos",
-      "type": "bool",
-    },
-    {
-      "name": "Harmony",
-      "code": "fh",
-      "type": "bool",
-    },
-    {
-      "name": "Attempted but failed",
-      "code": "fabf",
-      "type": "bool",
-    },
-    {
-      "name": "Not Attempted",
-      "code": "fna",
-      "type": "bool",
-    },
-    { "name": "Note in Trap",
-      "code": "fnit",
-      "type": "counter"
-    }
+      {
+          "name": "Parked",
+          "code": "fp",
+          "type": "bool"
+      },
+      {
+          "name": "Onstage",
+          "code": "fo",
+          "type": "bool"
+      },
+      {
+          "name": "Onstage (Spotlit)",
+          "code": "fos",
+          "type": "bool"
+      },
+      {
+          "name": "Harmony",
+          "code": "fh",
+          "type": "bool"
+      },
+      {
+          "name": "Attempted but failed",
+          "code": "fabf",
+          "type": "bool"
+      },
+      {
+          "name": "Not Attempted",
+          "code": "fna",
+          "type": "bool"
+      },
+      {
+          "name": "Note in Trap",
+          "code": "fnit",
+          "type": "counter"
+      }
   ],
   "postmatch": [
-    { "name": "Driver Skill",
-      "code": "ds",
-      "type": "radio",
-      "choices": {
-        "1": "1 (Not Effective)<br>",
-        "2": "2 (Average)<br>",
-        "3": "3 (Very Effective)<br>",
-        "0": "0 (Not Observed)"
+      {
+          "name": "Driver Skill",
+          "code": "ds",
+          "type": "radio",
+          "choices": {
+              "0": "0 (Not Observed)",
+              "1": "1 (Not Effective)<br>",
+              "2": "2 (Average)<br>",
+              "3": "3 (Very Effective)<br>"
+          },
+          "defaultValue": "0"
       },
-      "defaultValue": "0"
-    },
-    { "name": "Defense Rating",
-      "code": "dr",
-      "type": "radio",
-      "choices": {
-        "1": "1 (Below Average)<br>",
-        "2": "2 (Average)<br>",
-        "3": "3 (Good)<br>",
-        "4": "4 (Excellent)<br>",
-        "0": "0 (Did not play defense)"
+      {
+          "name": "Defense Rating",
+          "code": "dr",
+          "type": "radio",
+          "choices": {
+              "0": "0 (Did not play defense)",
+              "1": "1 (Below Average)<br>",
+              "2": "2 (Average)<br>",
+              "3": "3 (Good)<br>",
+              "4": "4 (Excellent)<br>"
+          },
+          "defaultValue": "0"
       },
-      "defaultValue": "0"
-    },
-    { "name": "Speed Rating",
-      "code": "sr",
-      "type": "radio",
-      "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)"
+      {
+          "name": "Speed Rating",
+          "code": "sr",
+          "type": "radio",
+          "choices": {
+              "1": "1 (slow)<br>",
+              "2": "2<br>",
+              "3": "3<br>",
+              "4": "4<br>",
+              "5": "5 (fast)"
+          },
+          "defaultValue": "3"
       },
-      "defaultValue":"3"
-    },
-    { "name": "Died/Immobilized",
-      "code": "die",
-      "type": "bool"
-    },
-    { "name": "Tippy<br>(almost tipped over)",
-      "code": "tip",
-      "type": "bool"
-    },
-    { "name": "Dropped Notes (>2)",
-      "code": "dn",
-      "type": "bool"
-    },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
-      "type": "bool"
-    },
-    { "name": "Comments",
-      "code": "co",
-      "type": "text",
-      "size": 15,
-      "maxSize": 200
-    }
+      {
+          "name": "Died/Immobilized",
+          "code": "die",
+          "type": "bool"
+      },
+      {
+          "name": "Tippy<br>(almost tipped over)",
+          "code": "tip",
+          "type": "bool"
+      },
+      {
+          "name": "Dropped Notes (>2)",
+          "code": "dn",
+          "type": "bool"
+      },
+      {
+          "name": "Make good<br>alliance partner?",
+          "tooltip": "Would you want this robot on your alliance in eliminations?",
+          "code": "all",
+          "type": "bool"
+      },
+      {
+          "name": "Comments",
+          "code": "co",
+          "type": "text",
+          "size": 15,
+          "maxSize": 200
+      }
   ]
 }`;
