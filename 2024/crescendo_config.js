@@ -109,7 +109,7 @@ var config_data = `
           "type": "counter"
       },
       {
-          "name": "Groud Pickup",
+          "name": "Floor Pickup",
           "code": "tgnp",
           "type": "counter"
       },
@@ -117,7 +117,19 @@ var config_data = `
           "name": "HP Pickup",
           "code": "thpnp",
           "type": "counter"
-      }
+      },
+      {
+        "name": "Co-operative",
+        "code": "fs",
+        "type": "radio",
+        "choices": {
+            "tc": "They click<br>",
+            "wc": "We click<br>",
+            "bc": "Both Click<br>",
+            "nc": "No one clicks<br>"
+        },
+        "defaultValue": "nc"
+    }
   ],
   "endgame": [
       {
@@ -125,23 +137,22 @@ var config_data = `
           "code": "dt",
           "type": "radio",
           "choices": {
-              "1020": "10 - 20 Sec<br>",
-              "0005": "0 - 5 Sec<br>",
-              "0510": "5 - 10 Sec<br>"
+              "10-20": "10 - 20 Sec.<br>",
+              "00-05": "0 - 5 Sec.<br>",
+              "05-10": "5 - 10 Sec.<br>",
+              "x": "No climb<br>"
           },
-          "defaultValue": "0005"
+          "defaultValue": "x"
       },
       {
-          "name": "Final Status",
+          "name": "Stage Status",
           "code": "fs",
           "type": "radio",
           "choices": {
-              "p": "Parked<br>",
               "o": "Onstage<br>",
               "s": "Onstage (Spotlit)<br>",
-              "h": "Harmony<br>",
               "a": "Attempted but failed<br>",
-              "x": "Not attempted"
+              "x": "Did not Attempt to Climb"
           },
           "defaultValue": "x"
       },
@@ -151,32 +162,12 @@ var config_data = `
           "type": "bool"
       },
       {
-          "name": "Onstage",
-          "code": "fo",
-          "type": "bool"
-      },
-      {
-          "name": "Onstage (Spotlit)",
-          "code": "fos",
-          "type": "bool"
-      },
-      {
           "name": "Harmony",
           "code": "fh",
           "type": "bool"
       },
       {
-          "name": "Attempted but failed",
-          "code": "fabf",
-          "type": "bool"
-      },
-      {
-          "name": "Not Attempted",
-          "code": "fna",
-          "type": "bool"
-      },
-      {
-          "name": "Note in Trap",
+          "name": "Notes in Trap",
           "code": "fnit",
           "type": "counter"
       }
@@ -221,9 +212,9 @@ var config_data = `
           "defaultValue": "3"
       },
       {
-          "name": "Died/Immobilized",
-          "code": "die",
-          "type": "bool"
+        "name": "Died/Immobilized",
+        "code": "die",
+        "type": "bool"
       },
       {
           "name": "Tippy<br>(almost tipped over)",
@@ -236,7 +227,7 @@ var config_data = `
           "type": "bool"
       },
       {
-          "name": "Make good<br>alliance partner?",
+          "name": "Make a good<br>alliance partner?",
           "tooltip": "Would you want this robot on your alliance in eliminations?",
           "code": "all",
           "type": "bool"
@@ -245,8 +236,8 @@ var config_data = `
           "name": "Comments",
           "code": "co",
           "type": "text",
-          "size": 15,
-          "maxSize": 200
+          "size": 13,
+          "maxSize": 500
       }
   ]
 }`;
