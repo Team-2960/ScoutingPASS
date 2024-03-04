@@ -60,18 +60,27 @@ var config_data = `
           "max": 99999
       },
       {
-            "name": "Start Position",
-            "code": "sp",
-            "type": "radio",
-            "choices": {
-                "ls": "Left of Speaker<br>",
-                "c": "Center<br>",
-                "rs": "Right of Speaker<br>",
-                "os": "Off to the side<br>"
-            }, 
-            "defaultValue": "c"
+          "name": "Starting Position",
+          "code": "sp",
+          "type": "radio",
+          "choices": {
+            "hp": "HP side<br>",
+            "c": "Center<br>",
+            "a": "Amp side<br>",
+            "ss": "Shoved to Side<br>"
+          },
+          "required": "true"
+      }, 
+      {
+          "name": "Auto Start Position",
+          "code": "as",
+          "type": "clickable_image",
+          "filename": "2024/field_image.png",
+          "clickRestriction": "one",
+          "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
+          "shape": "circle 5 black red true"
       }
- ],
+  ],
   "auton": [
       {
           "name": "Leave Starting Zone",
