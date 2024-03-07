@@ -174,9 +174,10 @@ var config_data = `
           "code": "st",
           "type": "radio",
           "choices": {
-              "10-20": "10 - 20 Sec.<br>",
+              "21+": "21+ Sec.<br>",
+              "11-20": "11 - 20 Sec.<br>",
               "00-05": "0 - 5 Sec.<br>",
-              "05-10": "5 - 10 Sec.<br>",
+              "06-10": "6 - 10 Sec.<br>",
               "x": "No climb<br>"
           },
           "defaultValue": "x"
