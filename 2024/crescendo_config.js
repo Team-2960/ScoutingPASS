@@ -6,22 +6,26 @@ var config_data = `
   "checkboxAs": "10",
   "prematch": [
       {
-          "name": "Scouter name (First/Last)",
+          "name": "Scouter First Name",
+          "gsCol": "Initials",
           "code": "s",
           "type": "scouter",
-          "size": 50,
+          "size": 20,
           "maxSize": 50,
           "required": "true"
       },
       {
           "name": "Event",
+          "gsCol": "Event Name",
           "code": "e",
           "type": "event",
-          "defaultValue": "2023tnkn",
+          "size": 20,
+          "defaultValue": "AAW3",
           "required": "true"
       },
       {
           "name": "Match Level",
+          "gsCol": "Match Level",
           "code": "l",
           "type": "level",
           "choices": {
@@ -32,6 +36,7 @@ var config_data = `
       },
       {
           "name": "Match #",
+          "gsCol": "Match #",
           "code": "m",
           "type": "match",
           "min": 1,
@@ -40,6 +45,7 @@ var config_data = `
       },
       {
           "name": "Robot",
+          "gsCol": "Robot",
           "code": "r",
           "type": "robot",
           "choices": {
@@ -54,6 +60,7 @@ var config_data = `
       },
       {
           "name": "Team #",
+          "gsCol": "Team #",
           "code": "t",
           "type": "team",
           "min": 1,
@@ -61,6 +68,7 @@ var config_data = `
       },
       {
           "name": "Starting Position",
+          "gsCol": "Start Location",
           "code": "sp",
           "type": "radio",
           "choices": {
@@ -72,7 +80,8 @@ var config_data = `
           "required": "true"
       }, 
       {
-          "name": "Auto Start Position",
+          "name": "Start Location",
+          "gsCol": "Map location",
           "code": "as",
           "type": "clickable_image",
           "filename": "2024/field_image.png",
@@ -84,21 +93,25 @@ var config_data = `
   "auton": [
       {
           "name": "Leave Starting Zone",
+          "gsCol": "Left starting zone?",
           "code": "al",
           "type": "bool"
       },
       {
           "name": "Amp Scores",
+          "gsCol": "A Amp scores",
           "code": "aas",
           "type": "counter"
       },
       {
           "name": "Speaker Scores",
+          "gsCol": "A Speaker scores",
           "code": "ass",
           "type": "counter"
       },
       {
           "name": "Note Pickup",
+          "gsCol": "A Pickup",
           "code": "anp",
           "type": "counter"
       }
@@ -106,26 +119,43 @@ var config_data = `
   "teleop": [
       {
           "name": "Amp Scores",
+          "gsCol": "T Amp scores",
           "code": "tas",
           "type": "counter"
       },
       {
           "name": "Speaker Scores",
-          "code": "tuss",
+          "gsCol": "T Speaker Scores",
+          "code": "tss",
           "type": "counter"
       },
       {
+        "name": "Unamplified Speaker Scores",
+        "gsCol": "T Unamplified Speaker Scores",
+        "code": "tss",
+        "type": "counter"
+      },
+      {
           "name": "Floor Pickup",
+          "gsCol": "Floor Pickup",
           "code": "tgnp",
           "type": "counter"
       },
       {
           "name": "HP Pickup",
+          "gsCol": "HP Pickup",
           "code": "thpnp",
           "type": "counter"
       },
       {
+        "name": "Assisted Notes",
+        "gsCol": "Assisted Notes",
+        "code": "asn",
+        "type": "counter"
+      },
+      {
         "name": "Co-operative",
+        "gsCol": "Co-op",
         "code": "co",
         "type": "radio",
         "choices": {
@@ -140,6 +170,7 @@ var config_data = `
   "endgame": [
       {
           "name": "Stage Timer",
+          "gsCol": "Stage Timer",
           "code": "st",
           "type": "radio",
           "choices": {
@@ -152,6 +183,7 @@ var config_data = `
       },
       {
           "name": "Stage Status",
+          "gsCol": "Stage Status",
           "code": "ss",
           "type": "radio",
           "choices": {
@@ -164,16 +196,19 @@ var config_data = `
       },
       {
           "name": "Parked",
+          "gsCol": "Parked?",
           "code": "fp",
           "type": "bool"
       },
       {
           "name": "Harmony",
+          "gsCol": "Harmony",
           "code": "fh",
           "type": "bool"
       },
       {
           "name": "Note in Trap",
+          "gsCol": "Note in Trap",
           "code": "fnit",
           "type": "bool"
       }
@@ -181,6 +216,7 @@ var config_data = `
   "postmatch": [
       {
           "name": "Driver Skill",
+          "gsCol": "Driver Skill",
           "code": "ds",
           "type": "radio",
           "choices": {
@@ -193,6 +229,7 @@ var config_data = `
       },
       {
           "name": "Defense Rating",
+          "gsCol": "Defense Rating",
           "code": "dr",
           "type": "radio",
           "choices": {
@@ -206,6 +243,7 @@ var config_data = `
       },
       {
           "name": "Speed Rating",
+          "gsCol": "Speed Rating",
           "code": "sr",
           "type": "radio",
           "choices": {
@@ -219,33 +257,39 @@ var config_data = `
       },
       {
             "name": "Fouls",
+            "gsCol": "Fouls",
             "code": "foul",
             "type": "counter"
       },
       {
         "name": "Died/Immobilized",
+        "gsCol": "Died/Immobilized?",
         "code": "die",
         "type": "bool"
       },
       {
           "name": "Tippy<br>(almost tipped over)",
+          "gsCol": "Tippy?",
           "code": "tip",
           "type": "bool"
       },
       {
           "name": "Dropped Notes (>2)",
+          "gsCol": "Dropped Notes (>2)",
           "code": "dn",
           "type": "bool"
       },
       {
           "name": "Make a good<br>alliance partner?",
+          "gsCol": "Good partner?",
           "tooltip": "Would you want this robot on your alliance in eliminations?",
           "code": "all",
           "type": "bool"
       },
       {
           "name": "Comments",
-          "code": "co",
+          "gsCol": "Comments",
+          "code": "com",
           "type": "text",
           "size": 13,
           "maxSize": 500
