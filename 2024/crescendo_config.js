@@ -20,7 +20,7 @@ var config_data = `
           "code": "e",
           "type": "event",
           "size": 20,
-          "defaultValue": "AAW3",
+          "defaultValue": "aaw3",
           "required": "true"
       },
       {
@@ -78,16 +78,6 @@ var config_data = `
             "ss": "Shoved to Side<br>"
           },
           "required": "true"
-      }, 
-      {
-          "name": "Start Location",
-          "gsCol": "Map location",
-          "code": "as",
-          "type": "clickable_image",
-          "filename": "2024/field_image.png",
-          "clickRestriction": "one",
-          "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
-          "shape": "circle 5 black red true"
       }
   ],
   "auton": [
@@ -124,33 +114,33 @@ var config_data = `
           "type": "counter"
       },
       {
-          "name": "Speaker Scores",
-          "gsCol": "T Speaker Scores",
-          "code": "tss",
+          "name": "Amplified Speaker Scores",
+          "gsCol": "T Amplified Speaker Scores",
+          "code": "tass",
           "type": "counter"
       },
       {
         "name": "Unamplified Speaker Scores",
         "gsCol": "T Unamplified Speaker Scores",
-        "code": "tss",
+        "code": "tuss",
         "type": "counter"
       },
       {
           "name": "Floor Pickup",
           "gsCol": "Floor Pickup",
-          "code": "tgnp",
+          "code": "tfp",
           "type": "counter"
       },
       {
           "name": "HP Pickup",
           "gsCol": "HP Pickup",
-          "code": "thpnp",
+          "code": "thpp",
           "type": "counter"
       },
       {
         "name": "Assisted Notes",
         "gsCol": "Assisted Notes",
-        "code": "asn",
+        "code": "tasn",
         "type": "counter"
       },
       {
@@ -221,7 +211,7 @@ var config_data = `
           "code": "ds",
           "type": "radio",
           "choices": {
-              "0": "0 (Not Observed)",
+              "0": "0 (Not Observed)<br>",                                        
               "1": "1 (Not Effective)<br>",
               "2": "2 (Average)<br>",
               "3": "3 (Very Effective)<br>"
@@ -234,7 +224,7 @@ var config_data = `
           "code": "dr",
           "type": "radio",
           "choices": {
-              "0": "0 (Did not play defense)",
+              "0": "0 (Did not play defense)<br>",
               "1": "1 (Below Average)<br>",
               "2": "2 (Average)<br>",
               "3": "3 (Good)<br>",
