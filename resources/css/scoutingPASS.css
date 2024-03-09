@@ -20,17 +20,17 @@ html, body{
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     text-align: center;
     color: white;
-    font-size: 13px;
+    font-size: 30px;
     font-style: bold;
     letter-spacing: 1px;
-    border-width: 4px;
+    border-width: 5px;
     border-color: white;
 }
 
 #auton_table, #endgame_table, #teleop_table {
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     color: black;
-    font-size: 13px;
+    font-size: 30px;
     font-style: bold;
     letter-spacing: 1px;
     border-width: 4px;
@@ -39,7 +39,7 @@ html, body{
 
 .button {
     font-family: Alexis;
-    font-size: 16px;
+    font-size: 40px;
 }
 
 #autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
@@ -69,7 +69,7 @@ html, body{
 
 .field-image-src{
     background-position: center;
-    border: 1px solid;
+    border: 5px solid;
 }
 
 .main-panel{
@@ -104,7 +104,8 @@ html, body{
 
 #qr-code{
   text-align: center;
-  color: black;
+  color: red;
+  font-size: 40px;
 }
 
 h1{
@@ -113,8 +114,8 @@ h1{
     border-style: groove;
     border-color: white;
     border-width: 2px;
-    font-size: 40px;
-    padding: 10px;
+    font-size: 50px;
+    padding: 40px;
     font-weight: 350;
 }
 
@@ -125,7 +126,7 @@ h1{
 h2{
     font-family: Alexis;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 300;
     font-style: italic;
 }
@@ -155,7 +156,7 @@ h2{
 
 #nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, #copyButton {
     font-family: Alexis;
-    padding: 10px;
+    padding: 40px;
     background-color: rgb(151, 199, 240);
     text-decoration: none;
     display: inline-block;
@@ -164,28 +165,28 @@ h2{
 #nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8 {
     font-family: Alexis;
     background-color: black;
-    padding: 10px;
+    padding: 40px;
     color: white;
 }
 
 .undoButton, .flipButton {
     font-family: Alexis;
-    background-color: black;
-    padding: 10px;
-    color: white;
-    margin-left: 20px;
+    background-color: white;
+    padding: 5px;
+    color: black;
+    margin-left: 10px;
 }
 
 #prevButton7, #prevButton8, #prevButton9{
     font-family: Alexis;
     background-color: rgb(151, 199, 240);
-    padding: 10px;
+    padding: 40px;
 }
 
 #prevButton1, #prevButton2, #prevButton3, #prevButton4, #prevButton5, #prevButton6{
     font-family: Alexis;
     background-color: black;
-    padding: 10px;
+    padding: 40px;
     color: white;
 
 }
@@ -214,11 +215,11 @@ table {
 }
 
 td {
-    padding: 10px 4px;
+    padding: 8px 5px;
 }
 
 input {
-    font-size: 16px;
+    font-size: 30px;
     font: roboto;
     color: black;
     background-color: white;
