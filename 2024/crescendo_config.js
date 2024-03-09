@@ -78,6 +78,14 @@ var config_data = `
             "ss": "Shoved to Side<br>"
           },
           "required": "true"
+      },
+      {
+          "name": "Date and Time",
+          "gsCol": "Date and Time",
+          "code": "dt",
+          "type": "date/time",
+          "min": 1,
+          "max": 300
       }
   ],
   "auton": [
@@ -159,8 +167,8 @@ var config_data = `
   ],
   "endgame": [
       {
-          "name": "Stage Timer",
-          "gsCol": "Stage Timer",
+          "name": "Time to Climb",
+          "gsCol": "Time to Climb",
           "code": "st",
           "type": "radio",
           "choices": {
