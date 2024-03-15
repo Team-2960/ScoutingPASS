@@ -23,7 +23,7 @@ var options = {
 
 // Must be filled in: e=event, m=v#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter
 //var requiredFields = ["s", "e", "m#", "r", "t", "sp"];
-var requiredFields = ["s", "e", "m", "r", "t"];
+var requiredFields = ["s", "e", "m", "r", "t", "sp"];
 
 function addTimer(table, idx, name, data) {
   var row = table.insertRow(idx);
