@@ -150,7 +150,8 @@ var config_data = `
             "blc": "Blue clicks<br>",
             "bc": "Both Click<br>",
             "nc": "No one clicks<br>"
-        }
+        },
+        "defaultValue": "nc"
       }
   ],
   "endgame": [
