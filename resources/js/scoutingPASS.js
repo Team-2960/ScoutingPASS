@@ -12,7 +12,7 @@ var xThreshold = 0.3;
 var slide = 0;
 var enableGoogleSheets = false;
 var pitScouting = false;
-var checkboxAs = 'YN';
+var checkboxAs = '10';
 
 // Options
 var options = {
@@ -21,8 +21,8 @@ var options = {
   quietZoneColor: '#FFFFFF'
 };
 
-// Must be filled in: e=event, m=v#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter
-//var requiredFields = ["s", "e", "m#", "r", "t", "sp"];
+// Must be filled in: e=event, m=v#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter  co=cooperative
+//var requiredFields = ["s", "e", "m#", "r", "t", "sp";
 var requiredFields = ["s", "e", "m", "r", "t", "sp"];
 
 function addTimer(table, idx, name, data) {

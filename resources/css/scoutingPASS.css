@@ -42,15 +42,17 @@ html, body{
     font-size: 40px;
 }
 
-#autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
+#autonHeader2, #endgameHeader2, #teleopHeader1, #teleopHeader2{
     color: black;
     border-color: black;
     border-width: 4px;
+    font-size: 60px;
 }
 
 #postmatchHeader{
     border-width: 4px;
     border-color: white;
+    font-size: 60px;
 }
 
 #prematchHeader1, #prematchHeader2{
@@ -61,6 +63,7 @@ html, body{
 
 #qrHeader1, #qrHeader2 {
     color: black;
+    font-size: 60px;
 }
 
 .field-image {
@@ -105,11 +108,10 @@ html, body{
 #qr-code{
   text-align: center;
   color: red;
-  font-size: 40px;
+  font-size: 60px;
 }
 
 h1{
-    font-family: Alexis;
     text-align: center;
     border-style: groove;
     border-color: white;
@@ -126,7 +128,7 @@ h1{
 h2{
     font-family: Alexis;
     text-align: center;
-    font-size: 40px;
+    font-size: 60px;
     font-weight: 300;
     font-style: italic;
 }
@@ -154,10 +156,19 @@ h2{
     display: flex;
 }
 
-#nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, #copyButton {
+#nextButton1, #nextButton2, #nextButton9, #nextButton10, .submitForm, #displayButton, #copyButton {
     font-family: Alexis;
-    padding: 40px;
+    padding: 60px;
     background-color: rgb(151, 199, 240);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.clearForm {
+    font-family: Alexis;
+    padding: 100px;
+    background-color: rgb(151, 199, 240);
+    width: 25%;
     text-decoration: none;
     display: inline-block;
 }
@@ -165,20 +176,20 @@ h2{
 #nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8 {
     font-family: Alexis;
     background-color: black;
-    padding: 40px;
+    padding: 60px;
     color: white;
 }
 
 #prevButton7, #prevButton8, #prevButton9{
     font-family: Alexis;
     background-color: rgb(151, 199, 240);
-    padding: 40px;
+    padding: 60px;
 }
 
 #prevButton1, #prevButton2, #prevButton3, #prevButton4, #prevButton5, #prevButton6{
     font-family: Alexis;
     background-color: black;
-    padding: 40px;
+    padding: 60px;
     color: white;
 
 }

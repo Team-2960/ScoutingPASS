@@ -6,7 +6,7 @@ var config_data = `
   "checkboxAs": "10",
   "prematch": [
       {
-          "name": "Scouter First Name",
+          "name": "First Name ONLY",
           "gsCol": "Initials",
           "code": "s",
           "type": "scouter",
@@ -20,7 +20,7 @@ var config_data = `
           "code": "e",
           "type": "event",
           "size": 20,
-          "defaultValue": "aaw3",
+          "defaultValue": "troyw4",
           "required": "true"
       },
       {
@@ -33,17 +33,17 @@ var config_data = `
           "required": "true"
       },
       {
-          "name": "Robot",
-          "gsCol": "Robot",
+          "name": "Driver Station",
+          "gsCol": "Driver Station",
           "code": "r",
           "type": "robot",
           "choices": {
-              "r1": "Red-1",
-              "b1": "Blue-1<br>",
-              "r2": "Red-2",
-              "b2": "Blue-2<br>",
-              "r3": "Red-3",
-              "b3": "Blue-3"
+              "r1": "Red-1 (Source)",
+              "b1": "Blue-1 (Amp)<br>",
+              "r2": "Red-2 (Center)",
+              "b2": "Blue-2 (Center)<br>",
+              "r3": "Red-3 (Amp)",
+              "b3": "Blue-3 (Source)"
           },
           "required": "true"
       },
@@ -63,8 +63,8 @@ var config_data = `
           "choices": {
             "asos": "Amp side of Speaker<br>",
             "cos": "Center of Speaker<br>",
-            "ifs": "Infield Side of Speaker<br>",
-            "ots": "Off to the Side<br>"
+            "isos": "Infield Side of Speaker<br>",
+            "ats": "At the source<br>"
           },
           "required": "true"
       },
@@ -79,21 +79,21 @@ var config_data = `
   ],
   "auton": [
       { 
-          "name": "Leave Starting Zone",
+          "name": "Left Starting Zone?",
           "gsCol": "Left starting zone?",
           "code": "al",
           "type": "bool"
       },
       {
-          "name": "Amp Scores",
-          "gsCol": "A Amp scores",
-          "code": "aas",
+          "name": "Amp Notes",
+          "gsCol": "A Amp Notes",
+          "code": "aan",
           "type": "counter"
       },
       {
-          "name": "Speaker Scores",
-          "gsCol": "A Speaker scores",
-          "code": "ass",
+          "name": "Speaker Notes",
+          "gsCol": "A Speaker Notes",
+          "code": "asn",
           "type": "counter"
       },
       {
@@ -105,31 +105,25 @@ var config_data = `
   ],
   "teleop": [ 
       {
-          "name": "Amp Scores",
+          "name": "Amp Notes",
           "gsCol": "T Amp scores",
-          "code": "tas",
+          "code": "tan",
           "type": "counter"
       },
       {
-          "name": "Amplified Speaker Scores",
-          "gsCol": "T Amplified Speaker Scores",
-          "code": "tass",
+          "name": "Speaker Notes",
+          "gsCol": "Speaker Notes",
+          "code": "sn",
           "type": "counter"
       },
       {
-        "name": "Unamplified Speaker Scores",
-        "gsCol": "T Unamplified Speaker Scores",
-        "code": "tuss",
-        "type": "counter"
-      },
-      {
-          "name": "Floor Pickup",
+          "name": "Floor Pickups",
           "gsCol": "Floor Pickup",
           "code": "tfp",
           "type": "counter"
       },
       {
-          "name": "Source Pickup",
+          "name": "Source Pickups",
           "gsCol": "Source Pickup",
           "code": "spu",
           "type": "counter"
@@ -141,30 +135,36 @@ var config_data = `
         "type": "counter"
       },
       {
-        "name": "Co-operative",
+        "name": "Co-operative Button<br> (Solid yellow light)",
         "gsCol": "Co-op",
         "code": "co",
         "type": "radio",
         "choices": {
-            "rc": "Red clicks<br>",
-            "blc": "Blue clicks<br>",
-            "bc": "Both Click<br>",
-            "nc": "No one clicks<br>"
+            "rcl": "Red Clicks<br>",
+            "blc": "Blue Clicks<br>",
+            "bcl": "Both Click<br>",
+            "ncl": "No Clicks<br>"
         },
-        "defaultValue": "nc"
+        "defaultValue": "ncl"
+      },
+      {
+        "name": "All Fouls",
+        "gsCol": "All Fouls",
+        "code": "foul",
+        "type": "counter"
       }
   ],
   "endgame": [
        {
-          "name": "Time to Climb",
+          "name": "Time to Climb<br> Chain",
           "gsCol": "Time to Climb",
-          "code": "st",
+          "code": "ttc",
           "type": "radio",
           "choices": {
-              "21+": "21+ Sec.<br>",
-              "11-20": "11 - 20 Sec.<br>",
-              "00-05": "0 - 5 Sec.<br>",
-              "06-10": "6 - 10 Sec.<br>",
+              "21+": "21+ sec.<br>",
+              "11-20": "11 - 20 sec.<br>",
+              "06-10": "6 - 10 sec.<br>",
+              "00-05": "0 - 5 sec.<br>",
               "nc": "No climb<br>"
           },
           "defaultValue": "nc"
@@ -175,37 +175,37 @@ var config_data = `
           "code": "ss",
           "type": "radio",
           "choices": {
-              "o": "Onstage<br>",
-              "s": "Onstage (Spotlit)<br>",
-              "a": "Attempted but failed<br>",
+              "on": "On the Chain (Off the ground 5 seconds after buzzer)<br>",
+              "so": "Spotlit On the Chain (Off the ground 5 seconds after buzzer)<br>",
+              "abf": "Attempted but failed to climb the chain<br>",
               "dna": "Did not Attempt to Climb"
           },
           "defaultValue": "dna"
       },
       {
-          "name": "Parked",
+          "name": "Parked?<br> (Bumpers partially in stage zone)",
           "gsCol": "Parked?",
-          "code": "fp",
+          "code": "ep",
           "type": "bool"
       },
       {
-          "name": "Harmony",
-          "gsCol": "Harmony",
-          "code": "fh",
+          "name": "Harmony?<br> (2+ robots on same chain)",
+          "gsCol": "Harmony?",
+          "code": "eh",
           "type": "bool"
       },
       {
-          "name": "Note in Trap",
-          "gsCol": "Note in Trap",
-          "code": "fnit",
+          "name": "Note in Trap?<br> (Full note in slot above the chain)",
+          "gsCol": "Note in Trap?",
+          "code": "enit",
           "type": "bool"
       }
   ],
   "postmatch": [
       {
-          "name": "Driver Skill",
-          "gsCol": "Driver Skill",
-          "code": "ds",
+          "name": "Drive Team Skill",
+          "gsCol": "Driver Team Skill",
+          "code": "dts",
           "type": "radio",
           "choices": {
               "0": "0 (Not Observed)<br>",                                        
@@ -230,28 +230,22 @@ var config_data = `
           "defaultValue": "0"
       },
       {
-          "name": "Speed Rating",
-          "gsCol": "Speed Rating",
-          "code": "sr",
+          "name": "Mobility Speed",
+          "gsCol": "Mobility Speed",
+          "code": "msp",
           "type": "radio",
           "choices": {
               "1": "1 (slow)<br>",
               "2": "2<br>",
-              "3": "3<br>",
+              "3": "3 (average)<br>",
               "4": "4<br>",
               "5": "5 (fast)"
           },
           "defaultValue": "3"
       },
       {
-            "name": "Fouls",
-            "gsCol": "Fouls",
-            "code": "foul",
-            "type": "counter"
-      },
-      {
-        "name": "Died/Immobilized",
-        "gsCol": "Died/Immobilized?",
+        "name": "Visible Connection Issues?",
+        "gsCol": "Visible Connection Issues?",
         "code": "die",
         "type": "bool"
       },
@@ -268,18 +262,18 @@ var config_data = `
           "type": "bool"
       },
       {
-          "name": "Make a good<br>alliance partner?",
+          "name": "Good alliance partner?",
           "gsCol": "Good partner?",
           "tooltip": "Would you want this robot on your alliance in eliminations?",
           "code": "all",
           "type": "bool"
       },
       {
-          "name": "Comments",
+          "name": "Comments: (No emojis)",
           "gsCol": "Comments",
           "code": "com",
           "type": "text",
-          "size": 13,
+          "size": 20,
           "maxSize": 500
       }
   ]
