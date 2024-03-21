@@ -15,8 +15,8 @@ var config_data = `
           "required": "true"
       },
       {
-          "name": "Event",
-          "gsCol": "Event Name",
+          "name": "Competition",
+          "gsCol": "Competition",
           "code": "e",
           "type": "event",
           "size": 20,
@@ -56,7 +56,7 @@ var config_data = `
           "max": 99999
       },
       {
-          "name": "Starting Position",
+          "name": "Robot Starting Position",
           "gsCol": "Start Location",
           "code": "sp",
           "type": "radio",
@@ -64,7 +64,7 @@ var config_data = `
             "asos": "Amp side of Speaker<br>",
             "cos": "Center of Speaker<br>",
             "isos": "Infield Side of Speaker<br>",
-            "ats": "At the source<br>"
+            "ats": "Source side of black tape<br>"
           },
           "required": "true"
       },
@@ -79,7 +79,7 @@ var config_data = `
   ],
   "auton": [
       { 
-          "name": "Left Starting Zone?",
+          "name": "Left Starting Zone?<br> (Colored Tape in front of robots)",
           "gsCol": "Left starting zone?",
           "code": "al",
           "type": "bool"
@@ -176,7 +176,7 @@ var config_data = `
           "type": "radio",
           "choices": {
               "on": "On the Chain (Off the ground 5 seconds after buzzer)<br>",
-              "so": "Spotlit On the Chain (Off the ground 5 seconds after buzzer)<br>",
+              "spot": "Spotlit On the Chain (Off the ground 5 seconds after buzzer)<br>",
               "abf": "Attempted but failed to climb the chain<br>",
               "dna": "Did not Attempt to Climb"
           },
@@ -195,7 +195,7 @@ var config_data = `
           "type": "bool"
       },
       {
-          "name": "Note in Trap?<br> (Full note in slot above the chain)",
+          "name": "Note in Trap?<br> (Note fully in slot above the chain)",
           "gsCol": "Note in Trap?",
           "code": "enit",
           "type": "bool"
