@@ -88,7 +88,8 @@ var config_data = `
           "name": "Amp Notes",
           "gsCol": "A Amp Notes",
           "code": "aan",
-          "type": "counter"
+          "type": "counter",
+          "defaultValue": "2"
       },
       {
           "name": "Speaker Notes",
@@ -135,7 +136,7 @@ var config_data = `
         "type": "counter"
       },
       {
-        "name": "Co-operative Button<br> (Solid yellow light)",
+        "name": "Co-operative Button<br> (Solid yellow light when on)",
         "gsCol": "Co-op",
         "code": "co",
         "type": "radio",
@@ -156,12 +157,12 @@ var config_data = `
   ],
   "endgame": [
        {
-          "name": "Time to Climb<br> Chain",
+          "name": "Time left in<br> match when climbed",
           "gsCol": "Time to Climb",
           "code": "ttc",
           "type": "radio",
           "choices": {
-              "21+": "21+ sec.<br>",
+              "21+ (Before Noise)": "21+ sec.<br>",
               "11-20": "11 - 20 sec.<br>",
               "06-10": "6 - 10 sec.<br>",
               "00-05": "0 - 5 sec.<br>",
