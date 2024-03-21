@@ -79,7 +79,7 @@ var config_data = `
   ],
   "auton": [
       { 
-          "name": "Left Starting Zone?<br> (Colored Tape in front of robots)",
+          "name": "Left Starting Zone?<br> (Black Tape in front of robots)",
           "gsCol": "Left starting zone?",
           "code": "al",
           "type": "bool"
