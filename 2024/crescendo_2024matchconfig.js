@@ -162,7 +162,8 @@ var config_data = `
           "code": "ttc",
           "type": "radio",
           "choices": {
-              "21+ (Before Noise)": "21+ sec.<br>",
+              "31-40": "31+.<br>",
+              "21-30": "21 - 30(Before Noise).<br>",
               "11-20": "11 - 20 sec.<br>",
               "06-10": "6 - 10 sec.<br>",
               "00-05": "0 - 5 sec.<br>",
