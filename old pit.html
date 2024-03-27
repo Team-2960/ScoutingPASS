@@ -18,7 +18,7 @@
 			<div id="main-panel-holder">
 				<div id="prematch" class="main-panel" style="background-color: black;">
 					<h1 id="prematchHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">N</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
-					<h2 id="prematchHeader2">Pit Scouting</h2>
+					<h2 id="prematchHeader2">2960 Pit Scouting</h2>
 					<p class="match-label"><input type="button" value="Next" id="nextButton1" onclick="swipePage(1)"></p>
 					<table id="prematch_table" style="font: Roboto">
 					<!-- ###PRE-MATCH-COMPONENTS###-->
@@ -26,7 +26,7 @@
 					<p class="match-label"><input type="button" value="Next" id="nextButton2" onclick="swipePage(1)"></p>
 				</div>
 
-				<div id="qr-code" class="main-panel" style="background-color: white;">
+				<div id="qr-code" class="main-panel" style="background-color: white;" onmouseover="displayData()">
 					<h1 id="qrHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
 					<h2 id="qrHeader2">Generate QR Code</h2>
 					<p class="match-label"><input type="button" value="Prev" id="prevButton9" onclick="swipePage(-1)"></p>
@@ -46,7 +46,7 @@
 				</td><td width="5%">&nbsp;</td></tr>
 			</table>
 					<p></p>
-					<p class="match-label"><input type="button" value="Display Data" id="displayButton" onclick="displayData()"><input type="button" value="Copy Data" id="copyButton" onclick="copyData()"></p>
+					<p class="match-label">	<p class="match-label"><input type="button" value="Copy Data" id="copyButton" onclick="copyData()"></p>
 					<div id="submitButton">
 						<button id="submit" type="submit" class="submitForm">Send to Google Sheets</button>
 					</div>

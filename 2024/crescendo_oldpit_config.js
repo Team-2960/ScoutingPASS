@@ -2,84 +2,110 @@ var config_data = `
 {
   "dataFormat": "tsv",
   "title": "Scouting PASS 2024",
-  "page_title": "Crescendo",
+  "page_title": "2024 Crescendo ",
   "pitConfig": "true",
   "prematch": [
+    { "name": "First Name",
+    "code": "fn",
+    "type": "text",
+    "size": 10,
+    "maxSize": 40
+    },
     { "name": "Team Number",
       "code": "t",
-      "type": "number"
-    },
-    { "name": "Width",
-      "code": "wid",
       "type": "number",
-      "defaultValue": "0"
-    },
-    { "name": "Weight",
-      "code": "wei",
-      "type": "number",
-      "defaultValue": "0"
+      "min": 1,
+      "max": 99999
     },
     { "name": "Drivetrain",
-      "code": "drv",
-      "type": "radio",
-      "choices": {
-        "s": "Swerve<br>",
-        "w": "West Coast/Tank<br>",
-        "b": "Butterfly/Grashopper<br>",
-        "m": "Mechanum<br>",
-        "o": "Other"
-      },
-      "defaultValue": "o"
+    "code": "drv",
+    "type": "radio",
+    "choices": {
+      "s": "Swerve<br>",
+      "w": "West Coast/Tank<br>",
+      "m": "Mechanum<br>",
+      "o": "Other:"
+    },
+    "defaultValue": "s"
     },
     { "name": "Other Drivetrain",
-      "code": "odt",
-      "type": "text",
-      "size": 20,
-      "maxSize": 50
+    "code": "odt",
+    "type": "text",
+    "size": 20,
+    "maxSize": 50
+    },   
+    { "name": "Wheel Type",
+    "code": "whty",
+    "type": "radio",
+    "choices": {
+      "traction": "Traction<br>",
+      "omni": "Omni<br>",
+      "tread": "Tread<br>"
     },
-    { "name": "Swerve Ratio",
-      "code": "sr",
+    "defaultValue": "traction"
+    },
+    { "name": "Wheel Count",
+    "code": "whecnt",
+    "type": "number",
+    "min": 1,
+    "max": 1
+    },
+    { "name": "Height (inches)",
+    "code": "hei",
+    "type": "number",
+    "defaultValue": "0",
+    "min": 1,
+    "max": 1
+    },
+    { "name": "Width (inches)",
+    "code": "wid",
+    "type": "number",
+    "defaultValue": "0",
+    "min": 1,
+    "max": 1
+    },
+    { "name": "Length (inches)",
+    "code": "len",
+    "type": "number",
+    "defaultValue": "0",
+    "min": 1,
+    "max": 1
+    },
+    { "name": "Max speed",
+    "code": "maxspe",
+    "type": "text",
+    "defaultValue": "0",
+    "size": 20,
+    "maxSize": 20
+    },
+    { "name": "Weight (pounds)",
+      "code": "wei",
+      "type": "number",
+      "defaultValue": "0",
+      "min": 1,
+      "max": 1
+    },
+    { "name": "Intake Options",
+      "code": "intopt",
       "type": "radio",
       "choices": {
-        "1": "L1 (8.14:1)<br>",
-        "2": "L2 (6.75:1)<br>",
-        "3": "L3 (6.12:1)<br>",
-        "4": "L4 (5.14:1)<br>",
-        "o": "Other ratio (put in comments)<br>",
-        "x": "Not Swerve"
+        "fl": "Floor<br>",
+        "src": "Source<br>",
+        "bth": "Both Floor/Source<br>"
       },
-      "defaultValue":"x"
+      "defaultValue":"fl"
     },
-    { "name": "Drivetrain Motor",
+    { "name": "Drivetrain Motor Type",
       "code": "mot",
       "type": "radio",
       "choices": {
         "n": "Neo<br>",
         "f": "Falcon<br>",
         "c": "CIM<br>",
-        "x": "Other<br>"
+        "krack": "Kraken<br>",
+        "x": "Other: (Comments)<br>"
       },
       "defaultValue":"x"
-    },
-    { "name": "# of Batteries",
-      "code": "nob",
-      "type": "number"
-    },
-    { "name": "Floor pickup Notes",
-      "code": "fpu",
-      "type": "bool"
-    },
-    { "name": "Autos",
-      "code": "aut",
-      "type": "text",
-      "size": 20,
-      "maxSize": 250
-    },
-    { "name": "Scouting Method /<br>Program (ScoutingPASS?)",
-      "code": "sct",
-      "type": "text",
-      "size": 20,
-      "maxSize": 250
     },
     { "name": "Comments",
       "code": "co",
