@@ -148,10 +148,137 @@ function addTimer(table, idx, name, data) {
   return idx + 1;
 }
 
+// whole function from WK
+function addSprees(table, idx, name, data) {
+  const row = table.insertRow(idx);
+
+  // Error Handling
+  if (!data.hasOwnProperty('code')) {
+    const errorCell = row.insertCell(0);
+    errorCell.classList.add("title");
+    errorCell.innerHTML = `Error: No code specified for ${name}`;
+    return idx + 1;
+  }
+
+  // Create title cell
+  const titleCell = row.insertCell(0);
+  titleCell.classList.add("title");
+  if (data.hasOwnProperty('tooltip')) {
+    titleCell.setAttribute("title", data.tooltip);
+  }
+
+  let controlCell;
+
+  // WK: spree counter
+  {
+    // Standard two-cell layout
+    // titleCell.style.width = ColWidth;
+    titleCell.style.textAlign = 'center';
+    titleCell.innerHTML = `${name}&nbsp;`;
+    titleCell.setAttribute("colspan", 2);
+
+    /* WK
+    controlCell = row.insertCell(1);
+    controlCell.style.width = ColWidth;
+    controlCell.classList.add("field");
+    controlCell.style.cssText = 'text-align: center !important; vertical-align: middle;';
+    */
+  }
+
+  // Create centered container for buttons
+  const centerContainer = document.createElement("div");
+  centerContainer.style.cssText = 'display: flex; justify-content: center; align-items: center; width: 100%;';
+
+
+  // Helper to create input elements
+  const createInput = (type, id, value, incrementValue) => {
+    const input = document.createElement("input");
+    input.type = type;
+    if (id) input.id = id;
+    if (value !== undefined) input.value = value;
+    if (incrementValue !== undefined) {
+      input.onclick = function () {
+        counter(this.parentElement.parentElement.parentElement, incrementValue);
+
+        let values = [];
+        for (let i = 0; i < 5; i++) {
+          values.push(document.getElementById(`input_${data.code}${i}`).value);
+        }
+        document.getElementById(`input_${id.split('_')[1].slice(0, -1)}`).value = values.join(',');
+      };
+    }
+    // Prevent double-tap zoom on buttons
+    if (type === "button") {
+      input.style.touchAction = 'manipulation';
+    }
+    return input;
+  };
+
+  // counterInput.name = (enableGoogleSheets && data.gsCol) ? data.gsCol : data.code;
+
+  let spreeTable = document.createElement('table');
+  spreeTable.innerHTML = `<tr><th style="text-align: right;">Occurences</th><th style="text-align: left;">Rating</th></tr>`;
+  spreeTable.style.width = 'max-content';
+  for (let i = 0; i < 5; i++) {
+    // index counter input ids
+    let code = `${data.code}${i}`
+
+    // Create button group
+    const buttonGroup = document.createElement("div");
+    buttonGroup.style.cssText = 'display: inline-flex; align-items: center; gap: 10px;';
+
+    // create main counter
+    buttonGroup.appendChild(createInput("button", `minus_${code}`, "-", -1));
+
+    const counterInput = createInput("text", `input_${code}`, 0);
+    counterInput.classList.add("counter");
+    counterInput.disabled = true;
+    counterInput.maxLength = 4;
+    counterInput.style.cssText = 'background-color: black; color: white; border: none; text-align: center; width: 3ch;';
+    buttonGroup.appendChild(counterInput);
+
+    buttonGroup.appendChild(createInput("button", `plus_${code}`, "+", 1));
+
+    // formatting elements
+    let localRow = document.createElement('tr');
+
+    var dataElement = document.createElement('td');
+    dataElement.appendChild(buttonGroup);
+
+    localRow.appendChild(dataElement);
+
+    let localLabel = document.createElement('p');
+    localLabel.innerText = `${(data.labels ? data.labels : ["Excellent", "Good", "Average", "Bad", "Terrible"])[i]}`;
+    localLabel.style.textAlign = 'left';
+    var dataElement = document.createElement('td');
+    dataElement.appendChild(localLabel);
+
+    localRow.appendChild(dataElement);
+
+    spreeTable.appendChild(localRow);
+  }
+
+  centerContainer.appendChild(spreeTable);
+
+  // invisible for fetching data
+  let dataCollector = document.createElement('input');
+  dataCollector.id = `input_${data.code}`;
+  dataCollector.name = (enableGoogleSheets && data.gsCol) ? data.gsCol : data.code;
+  dataCollector.hidden = 'true';
+  dataCollector.type = 'text';
+  dataCollector.value = '0,0,0,0,0';
+
+  centerContainer.appendChild(dataCollector);
+
+  titleCell.appendChild(centerContainer);
+
+  return idx + 1;
+}
+
 function addCounter(table, idx, name, data) {
   const row = table.insertRow(idx);
   const hasExtraInc = data.hasOwnProperty('altInc1') || data.hasOwnProperty('altInc2');
-  
+
   // Error Handling
   if (!data.hasOwnProperty('code')) {
     const errorCell = row.insertCell(0);
@@ -173,24 +300,24 @@ function addCounter(table, idx, name, data) {
     // When extra increments exist, use a single cell with colspan
     titleCell.setAttribute("colspan", 2);
     titleCell.style.cssText = 'text-align: center; vertical-align: middle;';
-    
+
     // Create wrapper div for flex layout
     const wrapper = document.createElement("div");
     wrapper.style.cssText = 'display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;';
-    
+
     // Create label
     const label = document.createElement("div");
     label.textContent = name;
     label.style.cssText = 'margin-bottom: 4px;';
     wrapper.appendChild(label);
-    
+
     titleCell.appendChild(wrapper);
     controlCell = wrapper;
   } else {
     // Standard two-cell layout
     titleCell.style.width = ColWidth;
     titleCell.innerHTML = `${name}&nbsp;`;
-    
+
     controlCell = row.insertCell(1);
     controlCell.style.width = ColWidth;
     controlCell.classList.add("field");
@@ -200,7 +327,7 @@ function addCounter(table, idx, name, data) {
   // Create centered container for buttons
   const centerContainer = document.createElement("div");
   centerContainer.style.cssText = 'display: flex; justify-content: center; align-items: center; width: 100%;';
-  
+
   // Create button group
   const buttonGroup = document.createElement("div");
   buttonGroup.style.cssText = 'display: inline-flex; align-items: center; gap: 10px;';
@@ -212,11 +339,11 @@ function addCounter(table, idx, name, data) {
     if (id) input.id = id;
     if (value !== undefined) input.value = value;
     if (incrementValue !== undefined) {
-      input.onclick = function() {
+      input.onclick = function () {
         counter(this.parentElement.parentElement.parentElement, incrementValue);
       };
     }
-	// Prevent double-tap zoom on buttons
+    // Prevent double-tap zoom on buttons
     if (type === "button") {
       input.style.touchAction = 'manipulation';
     }
@@ -227,11 +354,11 @@ function addCounter(table, idx, name, data) {
   if (data.altInc1) {
     buttonGroup.appendChild(createInput("button", `minusInc1_${data.code}`, -data.altInc1, -data.altInc1));
   }
-  
+
   if (data.altInc2) {
     buttonGroup.appendChild(createInput("button", `minusInc2_${data.code}`, -data.altInc2, -data.altInc2));
   }
-  
+
   buttonGroup.appendChild(createInput("button", `minus_${data.code}`, "-", -1));
 
   // Create main counter input
@@ -244,11 +371,11 @@ function addCounter(table, idx, name, data) {
   buttonGroup.appendChild(counterInput);
 
   buttonGroup.appendChild(createInput("button", `plus_${data.code}`, "+", 1));
-  
+
   if (data.altInc2) {
     buttonGroup.appendChild(createInput("button", `plusInc2_${data.code}`, `+${data.altInc2}`, data.altInc2));
   }
-  
+
   if (data.altInc1) {
     buttonGroup.appendChild(createInput("button", `plusInc1_${data.code}`, `+${data.altInc1}`, data.altInc1));
   }
@@ -344,6 +471,7 @@ function addClickableImage(table, idx, name, data) {
   canvas.setAttribute("class", "field-image-src");
   canvas.setAttribute("id", "canvas_" + data.code);
   canvas.innerHTML = "No canvas support";
+  // WK
   cell.appendChild(canvas);
 
   idx += 1;
@@ -720,6 +848,10 @@ function addElement(table, idx, data) {
     idx = addCheckbox(table, idx, name, data);
   } else if (data.type == 'counter') {
     idx = addCounter(table, idx, name, data);
+  }
+  // WK
+  else if (data.type == 'sprees') {
+    idx = addSprees(table, idx, name, data);
   } else if ((data.type == 'timer') ||
     (data.type == 'cycle')) {
     idx = addTimer(table, idx, name, data);
@@ -730,13 +862,14 @@ function addElement(table, idx, data) {
 }
 
 function buildRequiredElementList(element) {
-	if (element.required == "true") {
-		requiredFields.push(element.code);
-	}
+  if (element.required == "true") {
+    requiredFields.push(element.code);
+  }
 }
 
 function configure() {
   try {
+    // WK: orig -> var mydata = JSON.parse(config_data); } catch (err) {
     var mydata = JSON.parse(config_data);
   } catch (err) {
     console.log(`Error parsing configuration file`)
@@ -745,15 +878,15 @@ function configure() {
     var table = document.getElementById("prematch_table")
     var row = table.insertRow(0);
     var cell1 = row.insertCell(0);
-	cell1.style.width = ColWidth;
+    cell1.style.width = ColWidth;
     cell1.innerHTML = `Error parsing configuration file: ${err.message}<br><br>Use a tool like <a href="http://jsonlint.com/">http://jsonlint.com/</a> to help you debug your config file`
     return -1
   }
 
-  if(mydata.hasOwnProperty('dataFormat')) {
+  if (mydata.hasOwnProperty('dataFormat')) {
     dataFormat = mydata.dataFormat;
   }
-  
+
   if (mydata.hasOwnProperty('title')) {
     document.title = mydata.title;
   }
@@ -781,7 +914,7 @@ function configure() {
     // YN - Y or N
     // TF - T or F
     // 10 - 1 or 0
-    if (['YN','TF','10'].includes(mydata.checkboxAs)) {
+    if (['YN', 'TF', '10'].includes(mydata.checkboxAs)) {
       console.log("Setting checkboxAs to " + mydata.checkboxAs);
       checkboxAs = mydata.checkboxAs;
     } else {
@@ -796,7 +929,7 @@ function configure() {
   var idx = 0;
   pmc.forEach(element => {
     idx = addElement(pmt, idx, element);
-	buildRequiredElementList(element);
+    buildRequiredElementList(element);
   });
 
   // Configure auton screen
@@ -838,18 +971,18 @@ function configure() {
   return 0
 }
 
-function getRobot(){
+function getRobot() {
   return document.forms.scoutingForm.r.value;
 }
 
 
 function resetRobot() {
-for ( rb of document.getElementsByName('r')) { rb.checked = false };
+  for (rb of document.getElementsByName('r')) { rb.checked = false };
 }
 
 
-function getLevel(){
-return document.forms.scoutingForm.l.value
+function getLevel() {
+  return document.forms.scoutingForm.l.value
 }
 
 
@@ -858,16 +991,16 @@ function validateData() {
   var errStr = "";
   for (rf of requiredFields) {
     var thisRF = document.forms.scoutingForm[rf];
-	if (thisRF.value == "[]" || thisRF.value.length == 0) {
-	  if (rf == "as") {
-		rftitle = "Auto Start Position"
-	  } else {
-		thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
-		rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;","");
-	  }
-	  errStr += rf + ": " + rftitle + "\n";
-	  ret = false;
-	}
+    if (thisRF.value == "[]" || thisRF.value.length == 0) {
+      if (rf == "as") {
+        rftitle = "Auto Start Position"
+      } else {
+        thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
+        rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;", "");
+      }
+      errStr += rf + ": " + rftitle + "\n";
+      ret = false;
+    }
   }
   if (ret == false) {
     alert("Enter all required values\n" + errStr);
@@ -881,7 +1014,7 @@ function getData(dataFormat) {
   var fd = new FormData();
   var str = [];
 
-  switch(checkboxAs) {
+  switch (checkboxAs) {
     case 'TF':
       checkedChar = 'T';
       uncheckedChar = 'F';
@@ -908,7 +1041,7 @@ function getData(dataFormat) {
     if (thisField.type == 'checkbox') {
       var thisFieldValue = thisField.checked ? checkedChar : uncheckedChar;
     } else {
-      var thisFieldValue = thisField.value ? thisField.value.replace(/"/g, '').replace(/;/g,"-") : "";
+      var thisFieldValue = thisField.value ? thisField.value.replace(/"/g, '').replace(/;/g, "-") : "";
     }
     fd.append(fieldname, thisFieldValue)
   })
@@ -948,7 +1081,7 @@ function updateQRHeader() {
 
 function qr_regenerate() {
   // Validate required pre-match date (event, match, level, robot, scouter)
-  if (!pitScouting) {  
+  if (!pitScouting) {
     if (validateData() == false) {
       // Don't allow a swipe until all required data is filled in
       return false
@@ -1097,7 +1230,7 @@ function swipePage(increment) {
       window.scrollTo(0, 0);
       slides[slide].style.display = "table";
       document.getElementById('data').innerHTML = "";
-      document.getElementById('copyButton').setAttribute('value','Copy Data');
+      document.getElementById('copyButton').setAttribute('value', 'Copy Data');
     }
   }
 }
@@ -1178,9 +1311,9 @@ function onFieldClick(event) {
 
   let allowableResponses = document.getElementById("allowableResponses" + base).value;
 
-  if(allowableResponses != "none"){
+  if (allowableResponses != "none") {
     allowableResponsesList = allowableResponses.split(',').map(Number);
-    if (allowableResponsesList.indexOf(box)==-1){
+    if (allowableResponsesList.indexOf(box) == -1) {
       return;
     }
   }
@@ -1245,7 +1378,7 @@ function findMiddleOfBox(boxNum, width, height, resX, resY) {
   let boxY = Math.floor((boxNum - boxX + 1) / resX);
   let x = Math.round((boxWidth * boxX) + (Math.floor(boxWidth / 2)));
   let y = Math.round((boxHeight * boxY) + (Math.floor(boxHeight / 2)));
-  return x+","+y
+  return x + "," + y
 }
 
 function getIdBase(name) {
@@ -1352,8 +1485,7 @@ function counter(element, step) {
   }
 }
 
-function newCycle(event)
-{
+function newCycle(event) {
   let timerID = event.firstChild;
   let base = getIdBase(timerID.id);
   let inp = document.getElementById("input" + base)
@@ -1366,7 +1498,7 @@ function newCycle(event)
     tempValue.push(cycleTime);
     cycleInput.value = JSON.stringify(tempValue);
     let d = document.getElementById("display" + base);
-    d.value = cycleInput.value.replace(/\"/g,'').replace(/\[/g, '').replace(/\]/g, '').replace(/,/g, ', ');
+    d.value = cycleInput.value.replace(/\"/g, '').replace(/\[/g, '').replace(/\]/g, '').replace(/,/g, ', ');
   }
 }
 
@@ -1379,7 +1511,7 @@ function undoCycle(event) {
   tempValue.pop();
   cycleInput.value = JSON.stringify(tempValue);
   let d = document.getElementById("display" + uId);
-  d.value = cycleInput.value.replace(/\"/g,'').replace(/\[/g, '').replace(/\]/g, '').replace(/,/g, ', ');
+  d.value = cycleInput.value.replace(/\"/g, '').replace(/\[/g, '').replace(/\]/g, '').replace(/,/g, ', ');
 }
 
 function resetTimer(event) {
@@ -1459,13 +1591,13 @@ function flip(event) {
   drawFields();
 }
 
-function displayData(){
+function displayData() {
   document.getElementById('data').innerHTML = getData(dataFormat);
 }
 
-function copyData(){
+function copyData() {
   navigator.clipboard.writeText(getData(dataFormat));
-  document.getElementById('copyButton').setAttribute('value','Copied');
+  document.getElementById('copyButton').setAttribute('value', 'Copied');
 }
 
 window.onload = function () {
