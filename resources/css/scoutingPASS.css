@@ -1,9 +1,16 @@
 @font-face {
+<<<<<<< HEAD
     font-family: 'Alexis';
     font-style: normal;
     font-weight: normal;
     src: local('Alexis'), url('../fonts/alex.woff') format('woff');
     src: url("../fonts/alexisv3.ttf") format('truetype');
+=======
+    font-family: 'Euro Plate';
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/EuroPlate.ttf") format('truetype');
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
 }
 
 html, body{
@@ -29,22 +36,39 @@ html, body{
 
 #auton_table, #endgame_table, #teleop_table {
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+<<<<<<< HEAD
     color: black;
+=======
+    color: white;
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     font-size: 13px;
     font-style: bold;
     letter-spacing: 1px;
     border-width: 4px;
+<<<<<<< HEAD
     border-color: black;
 }
 
 .button {
     font-family: Alexis;
+=======
+    border-color: white;
+}
+
+.button {
+    font-family: 'Euro Plate';
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     font-size: 16px;
 }
 
 #autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
+<<<<<<< HEAD
     color: black;
     border-color: black;
+=======
+    color: white;
+    border-color: white;
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     border-width: 4px;
 }
 
@@ -108,14 +132,21 @@ html, body{
 }
 
 h1{
+<<<<<<< HEAD
     font-family: Alexis;
+=======
+    font-family: 'Euro Plate';
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     text-align: center;
     border-style: groove;
     border-color: white;
     border-width: 2px;
     font-size: 40px;
     padding: 10px;
+<<<<<<< HEAD
     font-weight: 350;
+=======
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
 }
 
 #page2, #page4 {
@@ -123,10 +154,16 @@ h1{
 }
 
 h2{
+<<<<<<< HEAD
     font-family: Alexis;
     text-align: center;
     font-size: 30px;
     font-weight: 300;
+=======
+    font-family: 'Euro Plate';
+    text-align: center;
+    font-size: 30px;
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     font-style: italic;
 }
 
@@ -154,7 +191,11 @@ h2{
 }
 
 #nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, #copyButton {
+<<<<<<< HEAD
     font-family: Alexis;
+=======
+    font-family: 'Euro Plate';
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     padding: 10px;
     background-color: rgb(151, 199, 240);
     text-decoration: none;
@@ -162,14 +203,22 @@ h2{
 }
 
 #nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8 {
+<<<<<<< HEAD
     font-family: Alexis;
+=======
+    font-family: 'Euro Plate';
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     background-color: black;
     padding: 10px;
     color: white;
 }
 
 .undoButton, .flipButton {
+<<<<<<< HEAD
     font-family: Alexis;
+=======
+    font-family: 'Euro Plate';
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     background-color: black;
     padding: 10px;
     color: white;
@@ -177,13 +226,21 @@ h2{
 }
 
 #prevButton7, #prevButton8, #prevButton9{
+<<<<<<< HEAD
     font-family: Alexis;
+=======
+    font-family: 'Euro Plate';
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     background-color: rgb(151, 199, 240);
     padding: 10px;
 }
 
 #prevButton1, #prevButton2, #prevButton3, #prevButton4, #prevButton5, #prevButton6{
+<<<<<<< HEAD
     font-family: Alexis;
+=======
+    font-family: 'Euro Plate';
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     background-color: black;
     padding: 10px;
     color: white;
@@ -191,19 +248,31 @@ h2{
 }
 
 #prematch_table{
+<<<<<<< HEAD
     font: Alexis;
+=======
+    font: 'Euro Plate';
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     text-align: center;
 }
 
 
 h1 .odd {
+<<<<<<< HEAD
     font-family: Alexis;
+=======
+    font-family: 'Euro Plate';
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     text-align: center;
     color: #0AB4EC;
 }
 
 h1 .even {
+<<<<<<< HEAD
     font-family: Alexis;
+=======
+    font-family: 'Euro Plate';
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     text-align: center;
     color: #42B333;
 }

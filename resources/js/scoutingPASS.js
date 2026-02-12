@@ -583,6 +583,65 @@ function addClickableImage(table, idx, name, data) {
   return idx + 1
 }
 
+<<<<<<< HEAD
+=======
+function addTextField(table, idx, name, data) {
+  var row = table.insertRow(idx);
+  var cell1 = row.insertCell(0);
+  cell1.style.width = ColWidth;
+  cell1.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
+    return idx + 1;
+  }
+  var cell2 = row.insertCell(1);
+  cell2.style.width = ColWidth;
+  cell1.innerHTML = name + '&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
+  cell2.classList.add("field");
+  var inp = document.createElement("textarea");
+  inp.setAttribute("id", "input_" + data.code);
+  inp.setAttribute("type", "text_field");
+  inp.setAttribute("rows", data.hasOwnProperty('rows') ? data.rows : 5)
+  if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
+  if (data.hasOwnProperty('size')) {
+    inp.setAttribute("size", data.size);
+  }
+  if (data.hasOwnProperty('maxSize')) {
+    inp.setAttribute("maxLength", data.maxSize);
+  }
+  if (data.hasOwnProperty('defaultValue')) {
+    if (data.type == 'event') {
+      data.defaultValue = data.defaultValue.toLowerCase();
+    }
+    inp.setAttribute("value", data.defaultValue);
+  }
+  if (data.hasOwnProperty('required')) {
+    inp.setAttribute("required", "");
+  }
+  if (data.hasOwnProperty('disabled')) {
+    inp.setAttribute("disabled", "");
+  }
+  cell2.appendChild(inp);
+
+  if (data.hasOwnProperty('defaultValue')) {
+    var def = document.createElement("input");
+    def.setAttribute("id", "default_" + data.code)
+    def.setAttribute("type", "hidden");
+    def.setAttribute("value", data.defaultValue);
+    cell2.appendChild(def);
+  }
+
+  return idx + 1
+}
+
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
 function addText(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
@@ -852,6 +911,11 @@ function addElement(table, idx, data) {
   // WK
   else if (data.type == 'sprees') {
     idx = addSprees(table, idx, name, data);
+<<<<<<< HEAD
+=======
+  } else if (data.type == 'text_field') {
+    idx = addTextField(table, idx, name, data);
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
   } else if ((data.type == 'timer') ||
     (data.type == 'cycle')) {
     idx = addTimer(table, idx, name, data);
@@ -1040,6 +1104,11 @@ function getData(dataFormat) {
 
     if (thisField.type == 'checkbox') {
       var thisFieldValue = thisField.checked ? checkedChar : uncheckedChar;
+<<<<<<< HEAD
+=======
+    } else if (thisField.type == 'textarea') {
+      var thisFieldValue = `"${thisField.value.replaceAll('"', "'")}"`;
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     } else {
       var thisFieldValue = thisField.value ? thisField.value.replace(/"/g, '').replace(/;/g, "-") : "";
     }

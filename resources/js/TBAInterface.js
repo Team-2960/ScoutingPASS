@@ -1,13 +1,18 @@
 // TBAInterface functions to pull data from TheBlueAlliance.com
 var teams = null;
 var schedule = null;
+<<<<<<< HEAD
 var authKey = "1lXUjkJnlY2eq2NTHiJM9hPRqZf7QU5Ulhic8yyz5EhStyRMNXkAnax6YnRFKkkF ";
+=======
+var authKey = "uTHeEfPigDp9huQCpLNkWK7FBQIb01Qrzvt4MAjh9z2WQDkrsvNE77ch6bOPvPb6";
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
 /**
  * Get list of teams in event
  *
  * @param {eventCode} eventCode the event code (i.e. 2020caln) to pull the team list
  */
 function getTeams(eventCode) {
+<<<<<<< HEAD
 	if (authKey) {
 		var xmlhttp = new XMLHttpRequest();
 		var url = "https://www.thebluealliance.com/api/v3/event/" + eventCode + "/teams/simple";
@@ -22,6 +27,22 @@ function getTeams(eventCode) {
 		// Send request
 		xmlhttp.send();
 	}
+=======
+  if (authKey) {
+    var xmlhttp = new XMLHttpRequest();
+    var url = "https://www.thebluealliance.com/api/v3/event/" + eventCode + "/teams/simple";
+    xmlhttp.open("GET", url, true);
+    xmlhttp.setRequestHeader("X-TBA-Auth-Key", authKey);
+    xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        var response = this.responseText;
+        teams = JSON.parse(response);
+      }
+    };
+    // Send request
+    xmlhttp.send();
+  }
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
 }
 
 /**
@@ -30,6 +51,7 @@ function getTeams(eventCode) {
  * @param {eventCode} eventCode the event code (i.e. 2020caln) to pull the team list
  */
 function getSchedule(eventCode) {
+<<<<<<< HEAD
 	if (authKey) {
 		var xmlhttp = new XMLHttpRequest();
 		var url = "https://www.thebluealliance.com/api/v3/event/" + eventCode + "/matches/simple";
@@ -44,4 +66,20 @@ function getSchedule(eventCode) {
 		// Send request
 		xmlhttp.send();
 	}
+=======
+  if (authKey) {
+    var xmlhttp = new XMLHttpRequest();
+    var url = "https://www.thebluealliance.com/api/v3/event/" + eventCode + "/matches/simple";
+    xmlhttp.open("GET", url, true);
+    xmlhttp.setRequestHeader("X-TBA-Auth-Key", authKey);
+    xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        var response = this.responseText;
+        schedule = JSON.parse(response);
+      }
+    };
+    // Send request
+    xmlhttp.send();
+  }
+>>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
 }
