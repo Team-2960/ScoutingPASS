@@ -1,11 +1,7 @@
 var config_data = JSON.stringify({
   "dataFormat": "tsv",
   "title": "Scouting PASS 2026",
-<<<<<<< HEAD
-  "page_title": "REBUILT",
-=======
   "page_title": "REBUILT 2960",
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
   "checkboxAs": "10",
   "prematch": [
     {
@@ -14,22 +10,14 @@ var config_data = JSON.stringify({
       "type": "scouter",
       "size": 5,
       "maxSize": 5,
-<<<<<<< HEAD
-      "required": "false" // true
-=======
       "required": "true" // true
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     },
     {
       "name": "Event",
       "code": "e",
       "type": "event",
       "defaultValue": "2026ilch",
-<<<<<<< HEAD
-      "required": "false" // true
-=======
       "required": "true" // maybe
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     },
     {
       "name": "Match Level",
@@ -41,11 +29,7 @@ var config_data = JSON.stringify({
         "f": "Finals"
       },
       "defaultValue": "qm",
-<<<<<<< HEAD
-      "required": "false" // true
-=======
       "required": "true" // true
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     },
     {
       "name": "Match #",
@@ -53,11 +37,7 @@ var config_data = JSON.stringify({
       "type": "match",
       "min": 1,
       "max": 150,
-<<<<<<< HEAD
-      "required": "false" // true
-=======
       "required": "true" // true
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     },
     {
       "name": "Robot",
@@ -71,11 +51,7 @@ var config_data = JSON.stringify({
         "r3": "Red-3",
         "b3": "Blue-3"
       },
-<<<<<<< HEAD
-      "required": "false" // true
-=======
       "required": "true" // true
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     },
     {
       "name": "Team #",
@@ -83,11 +59,7 @@ var config_data = JSON.stringify({
       "type": "team",
       "min": 1,
       "max": 99999,
-<<<<<<< HEAD
-      "required": "false" // true
-=======
       "required": "true" // true
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     },
     //     {
     //       "name": "Auto Start Location",
@@ -112,14 +84,11 @@ var config_data = JSON.stringify({
     //       "shape": "circle 5 black red true"
     //     },
     {
-<<<<<<< HEAD
-=======
       "name": "Moved",
       "code": "am",
       "type": "bool"
     },
     {
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
       "name": "Fuel Scored",
       "code": "afs",
       "type": "sprees"
@@ -143,35 +112,6 @@ var config_data = JSON.stringify({
       },
       "defaultValue": "x"
     },
-<<<<<<< HEAD
-    {
-      "name": "Pickup from Depot",
-      "code": "afd",
-      "type": "bool"
-    },
-    {
-      "name": "Pickup from Outpost",
-      "code": "afo",
-      "type": "bool"
-    },
-    {
-      "name": "Pickup from Neutral Zone",
-      "code": "aff",
-      "type": "bool"
-    }
-  ],
-  "teleop": [
-    //     {
-    //       "name": "Shooting Locations",
-    //       "code": "tsl",
-    //       "type": "clickable_image",
-    //       "filename": "2026/half_field.png",
-    //       "dimensions": "7 10",
-    //       "allowableResponses": "1 2 3 4 8 9 10 11 15 16 17 18 22 23 24 25 29 30 31 32 36 37 38 39 43 44 45 46 50 51 52 53 57 58 59 60 64 65 66 67",
-    //       "expectedMax": 25,
-    //       "shape": "circle 5 black red true"
-    //     },
-=======
     //     {
     //       "name": "Pickup from Depot",
     //       "code": "afd",
@@ -199,7 +139,6 @@ var config_data = JSON.stringify({
     //   "expectedMax": 25,
     //   "shape": "circle 5 black red true"
     // },
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     {
       "name": "Fuel Scored",
       "code": "tfs",
@@ -213,31 +152,6 @@ var config_data = JSON.stringify({
       "altInc2": 5,
       "type": "counter"
     },
-<<<<<<< HEAD
-    {
-      "name": "Pass from Opp Alliance Zone",
-      "code": "poa",
-      "expectedMax": 250,
-      "altInc1": 10,
-      "altInc2": 5,
-      "type": "counter"
-    },
-    {
-      "name": "Pickup from Depot",
-      "code": "tfd",
-      "type": "bool"
-    },
-    {
-      "name": "Pickup from Outpost",
-      "code": "tfo",
-      "type": "bool"
-    },
-    {
-      "name": "Pickup from Floor",
-      "code": "tff",
-      "type": "bool"
-    },
-=======
     // {
     //   "name": "Pass from Opp Alliance Zone",
     //   "code": "poa",
@@ -261,7 +175,6 @@ var config_data = JSON.stringify({
     //     "code": "tff",
     //     "type": "bool"
     //   },
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     {
       "name": "Climb",
       "code": "tc",
@@ -274,15 +187,12 @@ var config_data = JSON.stringify({
         "x": "Not Attempted"
       },
       "defaultValue": "x"
-<<<<<<< HEAD
-=======
     },
     {
       "name": "Comments",
       "code": "tm",
       "type": "text_field",
       "rows": 10
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     }
   ],
   //   "endgame": [

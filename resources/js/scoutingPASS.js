@@ -583,8 +583,6 @@ function addClickableImage(table, idx, name, data) {
   return idx + 1
 }
 
-<<<<<<< HEAD
-=======
 function addTextField(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
@@ -641,7 +639,6 @@ function addTextField(table, idx, name, data) {
   return idx + 1
 }
 
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
 function addText(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
@@ -911,11 +908,8 @@ function addElement(table, idx, data) {
   // WK
   else if (data.type == 'sprees') {
     idx = addSprees(table, idx, name, data);
-<<<<<<< HEAD
-=======
   } else if (data.type == 'text_field') {
     idx = addTextField(table, idx, name, data);
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
   } else if ((data.type == 'timer') ||
     (data.type == 'cycle')) {
     idx = addTimer(table, idx, name, data);
@@ -1104,11 +1098,8 @@ function getData(dataFormat) {
 
     if (thisField.type == 'checkbox') {
       var thisFieldValue = thisField.checked ? checkedChar : uncheckedChar;
-<<<<<<< HEAD
-=======
     } else if (thisField.type == 'textarea') {
       var thisFieldValue = `"${thisField.value.replaceAll('"', "'")}"`;
->>>>>>> 5fe95d5 (- 4 logos, 1 per corner)
     } else {
       var thisFieldValue = thisField.value ? thisField.value.replace(/"/g, '').replace(/;/g, "-") : "";
     }
