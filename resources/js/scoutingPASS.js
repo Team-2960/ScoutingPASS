@@ -1281,8 +1281,8 @@ function moveTouch(e) {
   initialX = null;
 };
 
-function swipePage(increment) {
-  if (qr_regenerate() == true) {
+function swipePage(increment, force = false) {
+  if (force || qr_regenerate() == true) {
     slides = document.getElementById("main-panel-holder").children
     if (slide + increment < slides.length && slide + increment >= 0) {
       slides[slide].style.display = "none";
